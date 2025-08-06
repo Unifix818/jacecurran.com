@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Dynalight&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+/* Apply to the entire page */
+html, body {
+	overscroll-behavior:none;
+  background-color: #111; /* Ensure background isn't white */
+    margin: 0;
+  padding: 0;
+  background-image: url('darth_stripe.png');  /* Replace with your tile image */
+  background-repeat: repeat;         /* Repeat both horizontally and vertically */
+  background-size: auto;             /* Use natural size for perfect tessellation */
+  background-position: top left;
+}
+
+body {
+  font-family: sans-serif;
+  color: white;
+}
+
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.about-image {
+  max-width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  flex-shrink: 0;
+}
+
+/* Optional: group spacing visually into rows */
+.about-image:nth-of-type(2),
+.about-image:nth-of-type(4) {
+  margin-right: 0rem;
+}
+
+.about-text {
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  max-width: 600px;
+  padding: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  flex-basis: 100%;
+  margin-top: 1.3rem;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1rem;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.banner .text {
+  font-family: 'Dynalight', cursive;
+  display: inline-block;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.1;
+  position: relative;
+}
+
+.name {
+  font-size: 6rem;
+  letter-spacing: 0.05em;
+}
+
+.dot-com {
+  position: absolute;
+  bottom: 1rem;         /* aligns with bottom of "Curran" */
+  right: -4rem;    /* tweak this to push it outward */
+  font-family: 'Dynalight', cursive;
+  font-size: 1.5rem;
+  color: white;
+  white-space: nowrap;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;   /* Stack vertically */
+  align-items: center;      /* Center horizontally */
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.nav-button {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  border-radius: 999px;
+  background-color: #111;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-family: 'Quicksand', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #444;
+
+  min-width: 200px;
+  text-align: center;
+  box-sizing: border-box;
+
+  /* Asymmetrical drop shadow on the right */
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.nav-button:hover {
+  background-color: #333;
+  box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 1500px) {
+  .about-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-text {
+    margin-top: 1rem;
+    order: 2; /* Ensure it goes between the image sets */
+  }
+
+  .about-left {
+    order: 1;
+  }
+
+  .about-right {
+    order: 3;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .dot-com {
+	display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .about-image {
+    max-width: 120px;
+    height: 120px;
+  }
+
+  .about-images {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+  }
+
+  .about-text {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .about-image {
+    max-width: 90px;
+    height: 90px;
+  }
+
+  .about-images {
+    gap: 0.3rem;
+  }
+
+  .about-text {
+    font-size: 0.9rem;
+    line-he
